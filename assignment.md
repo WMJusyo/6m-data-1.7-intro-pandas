@@ -18,14 +18,21 @@ This assignment reinforces what you practised in class:
 Test your understanding before diving into the code.
 
 **Question 1:** What is the key difference between a Pandas `Series` and a `DataFrame`?
+Series is 1d. DataFrame is 2d
 
 **Question 2:** You run `df.loc[0:3]`. How many rows do you get? What about `df.iloc[0:3]`?
+assuming a df with rows labelled 0,1,2,3.... we get 4 rows, because loc is by labels, so we get the labels 0-3. iloc gives us positional index, and only 0,1,2
 
 **Question 3:** You have a DataFrame with a `price` column stored as `object` type (strings like "£45.99"). What problem does this cause, and how do you fix it?
+You wont be able to do any mathematical operations, filtering, sorting on this. We need to remove any stray text e.g. £ and cast astype to float
 
 **Question 4:** When would you use `.apply()` instead of a direct vectorised operation like `df['col'] * 2`?
+When I'm using my own function where multiple calculations are needed instead of just simple multiplication
 
 **Question 5:** How do you select all numeric columns from a DataFrame, excluding float types?
+df.select_dtypes(include="number", exclude="float")
+[Honestly i couldnt figure this out from the class material, i had to ask Gemini for help!]
+
 
 <details>
 <summary>💡 Check Your Answers</summary>
